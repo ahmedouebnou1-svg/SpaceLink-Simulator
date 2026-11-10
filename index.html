@@ -1,55 +1,55 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SpaceLink - محاكاة شبكات الفضاء</title>
+    <title>SpaceLink - Space Network Simulator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>SpaceLink: محاكاة الاتصالات الفضائية (CN453)</h1>
-            <p>محاكاة التأخير، نوافذ الاتصال، وتقنية التخزين وإعادة التوجيه (Store & Forward)</p>
+            <h1>SpaceLink: Space Communication Network (CN453)</h1>
+            <p>Simulating Propagation Delay, Contact Windows, and Store & Forward Routing</p>
         </header>
 
         <div class="control-panel">
-            <h3>إعدادات المهمة</h3>
+            <h3>Mission Settings</h3>
             <div class="input-group">
-                <label for="msgRange">عدد الرسائل: <span id="msgCountVal">12</span></label>
+                <label for="msgRange">Messages to Transmit: <span id="msgCountVal">12</span></label>
                 <input type="range" id="msgRange" min="5" max="30" value="12">
             </div>
-            <button id="runBtn">تشغيل المحاكاة (Run Simulation)</button>
+            <button id="runBtn">Run Simulation</button>
         </div>
 
-        <!-- الخط الزمني لنوافذ الاتصال (Contact Window Timeline) -->
+        <!-- Contact Window Timeline -->
         <div class="timeline-panel">
-            <h3>نافذة الاتصال ونوافذ التوقف (Contact Windows)</h3>
+            <h3>Contact Windows & Disruption Timeline</h3>
             <div class="timeline-bar">
-                <div class="window open" title="رابط متاح">فتح (0-30 دقيقة)</div>
-                <div class="window closed" title="انقطاع الاتصال">فجوة (30-60 دقيقة)</div>
-                <div class="window open" title="رابط متاح">فتح (60-100 دقيقة)</div>
+                <div class="window open" title="Link Available">Open (0-30m)</div>
+                <div class="window closed" title="Contact Gap">Gap (30-60m)</div>
+                <div class="window open" title="Link Available">Open (60-100m)</div>
             </div>
         </div>
 
         <div class="results-panel">
             <div class="card">
-                <h3>الإرسال المباشر (Direct Only)</h3>
-                <p>الرسائل المسلمة: <span id="directDelivered">--</span></p>
-                <p>متوسط التأخير: <span id="directDelay">--</span> دقيقة</p>
+                <h3>Direct Only</h3>
+                <p>Delivered Messages: <span id="directDelivered">--</span></p>
+                <p>Avg Delay: <span id="directDelay">--</span> min</p>
             </div>
             <div class="card">
-                <h3>التخزين والإعادة (Store & Forward)</h3>
-                <p>الرسائل المسلمة: <span id="dtnDelivered">--</span></p>
-                <p>متوسط التأخير: <span id="dtnDelay">--</span> دقيقة</p>
+                <h3>Store & Forward (DTN)</h3>
+                <p>Delivered Messages: <span id="dtnDelivered">--</span></p>
+                <p>Avg Delay: <span id="dtnDelay">--</span> min</p>
             </div>
         </div>
 
-        <!-- سجل الأحداث التفاعلي (Discrete-Event Log) -->
+        <!-- Discrete-Event Log -->
         <div class="log-panel">
-            <h3>سجل أحداث المحاكاة (Discrete-Event Log)</h3>
+            <h3>Discrete-Event Simulation Log</h3>
             <div id="eventLog" class="log-box">
-                <p class="log-placeholder">اضغط على "تشغيل المحاكاة" لبدء تتبع الأحداث...</p>
+                <p class="log-placeholder">Click "Run Simulation" to trace network events...</p>
             </div>
         </div>
     </div>
