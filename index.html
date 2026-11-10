@@ -22,6 +22,16 @@
             <button id="runBtn">تشغيل المحاكاة (Run Simulation)</button>
         </div>
 
+        <!-- الخط الزمني لنوافذ الاتصال (Contact Window Timeline) -->
+        <div class="timeline-panel">
+            <h3>نافذة الاتصال ونوافذ التوقف (Contact Windows)</h3>
+            <div class="timeline-bar">
+                <div class="window open" title="رابط متاح">فتح (0-30 دقيقة)</div>
+                <div class="window closed" title="انقطاع الاتصال">فجوة (30-60 دقيقة)</div>
+                <div class="window open" title="رابط متاح">فتح (60-100 دقيقة)</div>
+            </div>
+        </div>
+
         <div class="results-panel">
             <div class="card">
                 <h3>الإرسال المباشر (Direct Only)</h3>
@@ -32,6 +42,14 @@
                 <h3>التخزين والإعادة (Store & Forward)</h3>
                 <p>الرسائل المسلمة: <span id="dtnDelivered">--</span></p>
                 <p>متوسط التأخير: <span id="dtnDelay">--</span> دقيقة</p>
+            </div>
+        </div>
+
+        <!-- سجل الأحداث التفاعلي (Discrete-Event Log) -->
+        <div class="log-panel">
+            <h3>سجل أحداث المحاكاة (Discrete-Event Log)</h3>
+            <div id="eventLog" class="log-box">
+                <p class="log-placeholder">اضغط على "تشغيل المحاكاة" لبدء تتبع الأحداث...</p>
             </div>
         </div>
     </div>
